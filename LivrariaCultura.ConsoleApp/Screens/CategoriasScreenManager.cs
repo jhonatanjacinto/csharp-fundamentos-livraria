@@ -19,7 +19,7 @@ public class CategoriasScreenManager(CategoriaRepository categoriaRepository)
             throw new CategoriaException("Nome da Categoria é inválido!");
         }
 
-        Categoria categoria = new(0, nomeCategoria);
+        Categoria categoria = new(Nome: nomeCategoria);
         await categoriaRepository.InsertAsync(categoria);
         
         return "Categoria cadastrada com sucesso!";
