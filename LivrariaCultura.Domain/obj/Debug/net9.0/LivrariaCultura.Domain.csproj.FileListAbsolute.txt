@@ -1,0 +1,12 @@
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\bin\Debug\net9.0\LivrariaCultura.Domain.deps.json
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\bin\Debug\net9.0\LivrariaCultura.Domain.dll
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\bin\Debug\net9.0\LivrariaCultura.Domain.pdb
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.csproj.AssemblyReference.cache
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.AssemblyInfoInputs.cache
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.AssemblyInfo.cs
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.csproj.CoreCompileInputs.cache
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.dll
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\refint\LivrariaCultura.Domain.dll
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.pdb
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\ref\LivrariaCultura.Domain.dll

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ryBZhbVz2a5MyzqoklLeUuDvvFidFg5MykxiIfW0H/k=",
+  "Source": "LivrariaCultura.WebApi",
+  "BasePath": "_content/LivrariaCultura.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
