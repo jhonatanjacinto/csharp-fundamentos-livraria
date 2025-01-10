@@ -13,7 +13,6 @@
         "packagesPath": "C:\\Users\\jhjac\\.nuget\\packages\\",
         "outputPath": "D:\\CursoCSharpFundamentos\\LivrariaCultura.ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\jhjac\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -42,7 +41,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -94,7 +94,6 @@
         "packagesPath": "C:\\Users\\jhjac\\.nuget\\packages\\",
         "outputPath": "D:\\CursoCSharpFundamentos\\LivrariaCultura.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\jhjac\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -119,7 +118,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -128,6 +128,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.35, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "MySql.Data": {
               "target": "Package",

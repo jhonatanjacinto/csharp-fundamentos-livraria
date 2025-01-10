@@ -2,7 +2,7 @@
 
 public enum FormatoEbook
 {
-    Mobi,
+    Mobi = 1,
     Pdf,
     Epub,
     Kpf

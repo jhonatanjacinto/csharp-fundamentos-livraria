@@ -397,6 +397,7 @@
       "LivrariaCultura.Domain/1.0.0": {
         "dependencies": {
           "Dapper": "2.1.35",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "MySql.Data": "9.1.0"
         },
         "runtime": {

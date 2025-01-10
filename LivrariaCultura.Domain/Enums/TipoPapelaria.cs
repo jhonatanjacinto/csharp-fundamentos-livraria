@@ -2,7 +2,7 @@
 
 public enum TipoPapelaria
 {
-    Caderno,
+    Caderno = 1,
     Caneta,
     Lapis,
     Borracha,

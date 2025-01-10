@@ -1,4 +1,5 @@
-﻿using LivrariaCultura.Domain.Interfaces;
+﻿using Dapper;
+using LivrariaCultura.Domain.Interfaces;
 using LivrariaCultura.Domain.Models;
 using LivrariaCultura.Domain.Utility;
 
@@ -9,29 +10,70 @@ public class ProdutoRepository<T>(IDatabase db) : IRepository<T> where T : Produ
     public async Task<T?> GetAsync(uint id)
     {
         var sql = ProdutoSqlBuilder.BuildSelectFor<T>(true);
-        return await db.QueryOneAsync<T>(sql, new { Id = id });
+        await using var conn = db.GetConnection();
+        
+        if (typeof(T) == typeof(Livro))
+        {
+            var result = await conn.QueryAsync<Livro, Categoria, T?>(sql, (produto, categoria) =>
+            {
+                produto.Categoria = categoria;
+                return produto as T ?? null;
+            }, new { Id = id });
+            
+            return result.FirstOrDefault();
+        }
+        
+        return await conn.QueryFirstOrDefaultAsync<T>(sql, new { Id = id });
     }
 
     public async Task<IEnumerable<T>> GetListAsync(uint page = 1, uint maxItems = 10)
     {
         var offset = (page - 1) * maxItems;
         var sql = ProdutoSqlBuilder.BuildSelectFor<T>();
-        return await db.QueryManyAsync<T>(sql, new { Offset = offset, MaxItems = maxItems });
+        await using var conn = db.GetConnection();
+
+        var t = new T();
+        if (t is Livro)
+        {
+            return await conn.QueryAsync<T, Categoria, T>(sql, (produto, categoria) =>
+            {
+                (produto as Livro)!.Categoria = categoria;
+                return produto;
+            }, new { Offset = offset, MaxItems = maxItems }, splitOn: "Id");
+        }
+        
+        return await conn.QueryAsync<T>(sql, new { Offset = offset, MaxItems = maxItems });
     }
 
     public async Task<bool> InsertAsync(T entity)
     {
         var sql = ProdutoSqlBuilder.BuildInsertFor<T>();
-        return await db.ExecuteAsync(sql, entity);
+        Dictionary<string,object>? replacingParameters = new();
+
+        if (entity is Livro { Categoria: not null } livro)
+        {
+            replacingParameters.Add("Categoria", livro.Categoria.Id);
+        }
+        
+        return await db.ExecuteAsync(sql, entity, replacingParameters);
     }
 
     public async Task<bool> UpdateAsync(T entity)
     {
-        throw new NotImplementedException();
+        var sql = ProdutoSqlBuilder.BuildUpdateFor<T>();
+        Dictionary<string,object>? replacingParameters = new();
+
+        if (entity is Livro { Categoria: not null } livro)
+        {
+            replacingParameters.Add("Categoria", livro.Categoria.Id);
+        }
+        
+        return await db.ExecuteAsync(sql, entity, replacingParameters);
     }
 
     public async Task<bool> DeleteAsync(uint id)
     {
-        throw new NotImplementedException();
+        var sql = ProdutoSqlBuilder.BuildDeleteFor<T>();
+        return await db.ExecuteAsync(sql, new { Id = id });
     }
 }

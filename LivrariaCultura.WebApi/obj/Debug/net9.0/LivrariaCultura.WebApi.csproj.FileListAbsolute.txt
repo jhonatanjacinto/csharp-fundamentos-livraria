@@ -51,3 +51,4 @@ D:\CursoCSharpFundamentos\LivrariaCultura.WebApi\obj\Debug\net9.0\refint\Livrari
 D:\CursoCSharpFundamentos\LivrariaCultura.WebApi\obj\Debug\net9.0\LivrariaCultura.WebApi.pdb
 D:\CursoCSharpFundamentos\LivrariaCultura.WebApi\obj\Debug\net9.0\LivrariaCultura.WebApi.genruntimeconfig.cache
 D:\CursoCSharpFundamentos\LivrariaCultura.WebApi\obj\Debug\net9.0\ref\LivrariaCultura.WebApi.dll
+D:\CursoCSharpFundamentos\LivrariaCultura.WebApi\obj\Debug\net9.0\LivrariaCultura.WebApi.sourcelink.json

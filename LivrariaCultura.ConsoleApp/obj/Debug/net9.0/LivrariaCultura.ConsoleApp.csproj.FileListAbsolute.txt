@@ -50,3 +50,4 @@ D:\CursoCSharpFundamentos\LivrariaCultura.ConsoleApp\bin\Debug\net9.0\Microsoft.
 D:\CursoCSharpFundamentos\LivrariaCultura.ConsoleApp\bin\Debug\net9.0\appsettings.json
 D:\CursoCSharpFundamentos\LivrariaCultura.ConsoleApp\bin\Debug\net9.0\ConsoleTables.dll
 D:\CursoCSharpFundamentos\LivrariaCultura.ConsoleApp\bin\Debug\net9.0\Wcwidth.dll
+D:\CursoCSharpFundamentos\LivrariaCultura.ConsoleApp\obj\Debug\net9.0\LivrariaCultura.ConsoleApp.sourcelink.json

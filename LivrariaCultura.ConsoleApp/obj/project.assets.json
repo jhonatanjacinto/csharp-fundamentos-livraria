@@ -713,6 +713,7 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "Dapper": "2.1.35",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "MySql.Data": "9.1.0"
         },
         "compile": {
@@ -2213,7 +2214,6 @@
       "packagesPath": "C:\\Users\\jhjac\\.nuget\\packages\\",
       "outputPath": "D:\\CursoCSharpFundamentos\\LivrariaCultura.ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
-      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "C:\\Users\\jhjac\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
@@ -2242,7 +2242,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {

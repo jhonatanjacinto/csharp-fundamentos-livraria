@@ -10,3 +10,4 @@ D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultur
 D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\refint\LivrariaCultura.Domain.dll
 D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.pdb
 D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\ref\LivrariaCultura.Domain.dll
+D:\CursoCSharpFundamentos\LivrariaCultura.Domain\obj\Debug\net9.0\LivrariaCultura.Domain.sourcelink.json

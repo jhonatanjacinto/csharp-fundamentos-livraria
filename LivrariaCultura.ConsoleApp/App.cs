@@ -8,7 +8,7 @@ using Microsoft.Win32.SafeHandles;
 
 namespace LivrariaCultura.ConsoleApp;
 
-public class App(CategoriasScreenManager categoriasScreenManager)
+public class App(CategoriasScreenManager categoriasScreenManager, ProdutosScreenManager produtosScreenManager)
 {
     private Screen CurrentScreen = Screen.Home;
 
@@ -25,10 +25,7 @@ public class App(CategoriasScreenManager categoriasScreenManager)
                     await CategoriasScreen();
                     break;
                 case Screen.Produtos:
-                    Console.Clear();
-                    Console.Write("Tela de produtos não implementada ainda...");
-                    Console.ReadKey();
-                    CurrentScreen = Screen.Home;
+                    await ProdutosScreen();
                     break;
                 default:
                     break;
@@ -37,6 +34,57 @@ public class App(CategoriasScreenManager categoriasScreenManager)
         
         Console.Clear();
         Console.WriteLine("Programa finalizado com sucesso...");
+    }
+
+    private async Task ProdutosScreen()
+    {
+        Console.Clear();
+        Console.WriteLine("Livraria Cultura - Gerenciamento de Produtos");
+        Console.WriteLine("Selecione uma das opções abaixo:");
+        Console.WriteLine("1 - Cadastrar Produto");
+        Console.WriteLine("2 - Listar Produtos");
+        Console.WriteLine("3 - Atualizar Produto");
+        Console.WriteLine("4 - Excluir Produto");
+        Console.WriteLine("5 - Voltar ao menu principal");
+        Console.Write("Informe a opção desejada: ");
+        var mensagemSucesso = string.Empty;
+        
+        try
+        {
+            if (int.TryParse(Console.ReadLine(), out var opcao))
+            {
+                Func<string> delegateRetornarHome = () =>
+                {
+                    CurrentScreen = Screen.Home;
+                    return string.Empty;
+                };
+                
+                mensagemSucesso = opcao switch
+                {
+                    1 => await produtosScreenManager.CadastrarProdutoScreen(),
+                    2 => await produtosScreenManager.ListarProdutosScreen(),
+                    3 => await produtosScreenManager.AtualizarProdutoScreen(),
+                    4 => await produtosScreenManager.ExcluirProdutoScreen(),
+                    5 => delegateRetornarHome(),
+                    _ => throw new ProdutoException("Opcão selecionada é inválida! Tente novamente...")
+                };
+            }
+            
+            if (!string.IsNullOrWhiteSpace(mensagemSucesso))
+            {
+                ExibirMensagemSucesso(mensagemSucesso);
+            }
+        }
+        catch (ProdutoException ex)
+        {
+            ExibirMensagemErro(ex.Message);
+        }
+        catch (Exception e)
+        {
+            ExibirMensagemErro("Não foi possível realizar a operação desejada no gerencimento de produtos. Tente novamente!");
+            // Log e.Message
+            Console.WriteLine(e.Message);
+        }
     }
 
     private void HomeScreen()
@@ -119,6 +167,7 @@ public class App(CategoriasScreenManager categoriasScreenManager)
         {
             ExibirMensagemErro("Não foi possível realizar a operação desejada no gerencimento de categorias. Tente novamente!");
             // Log ex.Message
+            Console.WriteLine(ex.Message);
         }
     }
 

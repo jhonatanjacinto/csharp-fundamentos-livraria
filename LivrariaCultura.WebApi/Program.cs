@@ -1,7 +1,7 @@
+using LivrariaCultura.Domain.Extensions;
 using LivrariaCultura.Domain.Interfaces;
 using LivrariaCultura.Domain.Persistence;
 using LivrariaCultura.Domain.Repositories;
-using LivrariaCultura.WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
