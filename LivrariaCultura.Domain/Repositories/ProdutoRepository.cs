@@ -12,12 +12,13 @@ public class ProdutoRepository<T>(IDatabase db) : IRepository<T> where T : Produ
         var sql = ProdutoSqlBuilder.BuildSelectFor<T>(true);
         await using var conn = db.GetConnection();
         
-        if (typeof(T) == typeof(Livro))
+        var t = new T();
+        if (t is Livro)
         {
-            var result = await conn.QueryAsync<Livro, Categoria, T?>(sql, (produto, categoria) =>
+            var result = await conn.QueryAsync<T, Categoria, T?>(sql, (produto, categoria) =>
             {
-                produto.Categoria = categoria;
-                return produto as T ?? null;
+                (produto as Livro)!.Categoria = categoria;
+                return produto;
             }, new { Id = id });
             
             return result.FirstOrDefault();

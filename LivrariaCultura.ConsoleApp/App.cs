@@ -34,6 +34,7 @@ public class App(CategoriasScreenManager categoriasScreenManager, ProdutosScreen
         
         Console.Clear();
         Console.WriteLine("Programa finalizado com sucesso...");
+        Console.ReadKey();
     }
 
     private async Task ProdutosScreen()

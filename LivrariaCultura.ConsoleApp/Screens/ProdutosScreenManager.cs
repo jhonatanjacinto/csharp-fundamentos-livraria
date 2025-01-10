@@ -235,6 +235,7 @@ public class ProdutosScreenManager(
             }
         }
 
+        Console.WriteLine("Pressione qualquer tecla para continuar...");
         Console.ReadKey();
         return "";
     }
@@ -263,7 +264,8 @@ public class ProdutosScreenManager(
     private static void PreencherDadosProduto(Produto produto)
     {
         Console.Write("Informe o nome do produto: ");
-        var nome = Console.ReadLine() ?? produto.Nome;
+        var n = Console.ReadLine();
+        var nome = string.IsNullOrEmpty(n) ? produto.Nome : n;
         
         if (string.IsNullOrWhiteSpace(nome))
         {
@@ -273,7 +275,8 @@ public class ProdutosScreenManager(
         produto.Nome = nome;
         
         Console.Write("Informe a descricao do produto: ");
-        produto.Descricao = Console.ReadLine() ?? produto.Descricao;
+        var d = Console.ReadLine();
+        produto.Descricao = string.IsNullOrEmpty(d) ? produto.Descricao : d;
         
         Console.Write("Informe o preço do produto: ");
         decimal preco = 0;
@@ -301,7 +304,8 @@ public class ProdutosScreenManager(
     private async Task PreencherDadosLivro(Livro produto)
     {
         Console.Write("Informe o autor do livro: ");
-        var autor = Console.ReadLine() ?? produto.Autor;
+        var a = Console.ReadLine();
+        var autor = string.IsNullOrEmpty(a) ? produto.Autor : a;
 
         if (string.IsNullOrWhiteSpace(autor))
         {
@@ -311,7 +315,8 @@ public class ProdutosScreenManager(
         produto.Autor = autor;
         
         Console.Write("Informe a editora do livro: ");
-        var editora = Console.ReadLine() ?? produto.Editora;
+        var e = Console.ReadLine();
+        var editora = string.IsNullOrEmpty(e) ? produto.Editora : e;
 
         if (string.IsNullOrWhiteSpace(editora))
         {
@@ -321,7 +326,8 @@ public class ProdutosScreenManager(
         produto.Editora = editora;
         
         Console.Write("Informe o ISBN do livro: ");
-        var isbn = Console.ReadLine() ?? produto.Isbn;
+        var i = Console.ReadLine();
+        var isbn = string.IsNullOrEmpty(i) ? produto.Isbn : i;
 
         if (string.IsNullOrWhiteSpace(isbn))
         {
@@ -387,7 +393,8 @@ public class ProdutosScreenManager(
     private static void PreencherDadosPapelaria(Papelaria produto)
     {
         Console.Write("Informe a marca do produto: ");
-        produto.Marca = Console.ReadLine() ?? produto.Marca;
+        var m = Console.ReadLine();
+        produto.Marca = string.IsNullOrEmpty(m) ? produto.Marca : m;
         ExibirTiposPapelarias();
         
         Console.Write("Informe o tipo de papelaria: ");
