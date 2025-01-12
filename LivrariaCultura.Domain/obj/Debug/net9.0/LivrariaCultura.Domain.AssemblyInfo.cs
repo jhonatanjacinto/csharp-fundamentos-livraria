@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LivrariaCultura.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d73cd6bdd6060351af754dea43d4c77dac77ac7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce18ca4717812e31f42236918773e1f017500559")]
 [assembly: System.Reflection.AssemblyProductAttribute("LivrariaCultura.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LivrariaCultura.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

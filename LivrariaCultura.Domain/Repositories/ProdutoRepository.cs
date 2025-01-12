@@ -19,7 +19,7 @@ public class ProdutoRepository<T>(IDatabase db) : IRepository<T> where T : Produ
             {
                 (produto as Livro)!.Categoria = categoria;
                 return produto;
-            }, new { Id = id });
+            }, new { Id = id }, splitOn: "Id");
             
             return result.FirstOrDefault();
         }

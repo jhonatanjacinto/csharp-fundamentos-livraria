@@ -177,7 +177,7 @@ public class ProdutosScreenManager(
                             livroFisico.Isbn, 
                             livroFisico.QuantidadePaginas, 
                             livroFisico.Categoria?.Nome, 
-                            livroFisico.IsUsado);
+                            livroFisico.IsUsado ? "Sim" : "Não");
                     }
                     livrosFisicosTable.Write();
                     break;
