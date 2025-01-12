@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LivrariaCultura.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39c34323e2c8d6266b482093c553b59e8b6b4922")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d73cd6bdd6060351af754dea43d4c77dac77ac7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("LivrariaCultura.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LivrariaCultura.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
