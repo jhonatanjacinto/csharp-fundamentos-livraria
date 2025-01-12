@@ -135,15 +135,59 @@ public class ProdutosScreenManager(
             switch (opcao)
             {
                 case 1:
+                    var livroFisico = await livroFisicoRepository.GetAsync(idProduto);
+                    if (livroFisico == null)
+                    {
+                        throw new ProdutoException("Livro físico não encontrado!");
+                    }
+                    Console.WriteLine($"Você irá excluir o livro físico abaixo: {livroFisico.Nome}");
+                    Console.Write("Deseja continuar? S/N: ");
+                    if (Console.ReadLine()?.ToUpper() != "S")
+                    {
+                        return "Operação cancelada!";
+                    }
                     await livroFisicoRepository.DeleteAsync(idProduto);
                     break;
                 case 2:
+                    var ebook = await ebookRepository.GetAsync(idProduto);
+                    if (ebook == null)
+                    {
+                        throw new ProdutoException("E-book não encontrado!");
+                    }
+                    Console.WriteLine($"Você irá excluir o E-book abaixo: {ebook.Nome}");
+                    Console.Write("Deseja continuar? S/N: ");
+                    if (Console.ReadLine()?.ToUpper() != "S")
+                    {
+                        return "Operação cancelada!";
+                    }
                     await ebookRepository.DeleteAsync(idProduto);
                     break;
                 case 3:
+                    var papelaria = await papelariaRepository.GetAsync(idProduto);
+                    if (papelaria == null)
+                    {
+                        throw new ProdutoException("Papelaria não encontrada!");
+                    }
+                    Console.WriteLine($"Você irá excluir a papelaria abaixo: {papelaria.Nome}");
+                    Console.Write("Deseja continuar? S/N: ");
+                    if (Console.ReadLine()?.ToUpper() != "S")
+                    {
+                        return "Operação cancelada!";
+                    }
                     await papelariaRepository.DeleteAsync(idProduto);
                     break;
                 case 4:
+                    var bebida = await bebidaRepository.GetAsync(idProduto);
+                    if (bebida == null)
+                    {
+                        throw new ProdutoException("Bebida não encontrada!");
+                    }
+                    Console.WriteLine($"Você irá excluir a bebida abaixo: {bebida.Nome}");
+                    Console.Write("Deseja continuar? S/N: ");
+                    if (Console.ReadLine()?.ToUpper() != "S")
+                    {
+                        return "Operação cancelada!";
+                    }
                     await bebidaRepository.DeleteAsync(idProduto);
                     break;
             }
